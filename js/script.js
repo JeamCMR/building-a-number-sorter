@@ -11,7 +11,12 @@ const sortInputArray = (event) =>{
     // console.log(inputValues);
 
     // const sortedValues  = bubbleSort (inputValues);
-    const sortedValues   = selectionSort (inputValues);
+
+    // const sortedValues   = selectionSort (inputValues);
+
+    // const sortedValues   = insertionSort (inputValues);
+
+    const sortedValues   = inputValues.sort();
     // console.log(sortedValues);
     updateUI(sortedValues);
 }
@@ -61,7 +66,23 @@ const selectionSort  = (array) =>{
 }
 
 
+//Algoritmo de clasificacion por insercion [Comienza la matriz ordenada con el primer elemento 
+//Luego inspecciona el siguiente elemento y lo intercambia hacia atrás en la matriz ordenada hasta 
+//que esté en una posición ordenada, y así sucesivamente.]
 
+const insertionSort  = (array) =>{
+  for (let i = 1; i < array.length; i++ ){
+    const currValue = array[i];
+    let j = i - 1;
+
+    while (j >= 0 && array[j] > currValue ){
+        array[j + 1] = array[j];
+        j--
+      }
+      array[j + 1] = currValue;
+  }
+  return array;
+}
 
 
 /** EVENTOS **/
