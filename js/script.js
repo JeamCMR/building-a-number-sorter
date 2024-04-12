@@ -16,7 +16,9 @@ const sortInputArray = (event) =>{
 
     // const sortedValues   = insertionSort (inputValues);
 
-    const sortedValues   = inputValues.sort();
+    const sortedValues = inputValues.sort((a, b) => {// con el metodo sort se puede ordenar una matriz
+        return a-b
+    }); 
     // console.log(sortedValues);
     updateUI(sortedValues);
 }
